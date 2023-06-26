@@ -9,8 +9,11 @@ function waitUntil(callback, tick = 50, attempts = 10) {
         clearInterval(interval);
         reject("Tentativas máximas alcançadas");
       }
-      callback(resolve);
-      step = +1;
+      callback((params)=>{
+        clearInterval(interval);
+        resolve(params);
+      });
+      step += 1;
     }, tick);
   });
   clearInterval(interval);
