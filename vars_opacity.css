@@ -1,0 +1,10 @@
+// Inserindo opacidade em uma cor a partir de variavel
+
+:root{
+  --primary: #43aa8b;
+}
+
+
+.class{
+  color: color-mix(in srgb, var(--primary), #0000 20%); // cor é gerada com 20% de opacidade
+}
